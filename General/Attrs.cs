@@ -108,7 +108,7 @@ namespace Roentgenium.Attributes
     }
 
     /// <summary>
-    /// Specifies that the given field (must be an int or long) be
+    /// Specifies that the given field (must be an uint or ulong) be
     /// assigned the monotonicially-increasing sequence number.
     /// </summary>
     [AttributeUsage(AttributeTargets.Property)]

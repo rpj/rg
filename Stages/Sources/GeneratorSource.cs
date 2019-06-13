@@ -46,11 +46,11 @@ namespace Roentgenium.Stages.Sources
                 });
                 
                 // verify the field generator options, specifically that:
-                // - SequenceNumberAttribute can only be applied to 'int' and 'long' fields
+                // - SequenceNumberAttribute can only be applied to 'uint' and 'ulong' fields
                 // - SequenceNumberAttribute and FieldLinkerTypeAttribute cannot coexist on a field
-                if (isSeqNo && p.PropertyType != typeof(int) && p.PropertyType != typeof(long))
+                if (isSeqNo && p.PropertyType != typeof(uint) && p.PropertyType != typeof(ulong))
                     throw new InvalidOperationException($"SequenceNumberAttribute applied to field {p}, " +
-                        $"which is of type {p.PropertyType}: it must be 'int' or 'long'");
+                        $"which is of type {p.PropertyType}: it must be 'uint' or 'ulong'");
                 
                 if (isSeqNo && linker != null)
                     throw new InvalidProgramException("Sequence number field cannot be also be linked");

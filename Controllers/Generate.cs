@@ -83,7 +83,10 @@ namespace Roentgenium.Controllers
                 limitFailures.Add(($"The value {useOpts.Count} exceeds the allowed limit", "count"));
 
             if (_limits.MaxQueuedJobs.HasValue &&
-                _pipelineManager.Info().Count >= _limits.MaxQueuedJobs.Value)
+                _pipelineManager.Info().List.Where(j => 
+                    j.TypedStatus == PipelineBase.PipelineStatus.Executing || 
+                    j.TypedStatus == PipelineBase.PipelineStatus.Persisting)
+                    .ToList().Count >= _limits.MaxQueuedJobs.Value)
                 limitFailures.Add(("Too many jobs are currently executing, this job cannot be queued", "MaxQueuedJobs"));
 
             if (_limits.MaxTotalRecordsInFlight.HasValue &&

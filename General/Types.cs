@@ -201,7 +201,7 @@ namespace Roentgenium.Interfaces
         public static readonly int DefaultLength = 10;
 
         public double MinValue          = 0;
-        public double MaxValue          = int.MaxValue;
+        public double MaxValue          = long.MaxValue;
         public int BlankFrequency       = BlankFrequencyDisabled;
         public int LengthLimit          = DefaultLength;
         public int RoundTo              = DefaultDecimalPlaceRound;

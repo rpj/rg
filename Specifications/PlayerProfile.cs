@@ -95,6 +95,6 @@ namespace Roentgenium.Specifications
         public string LinkedShortCode { get; set; }
 
         [SequenceNumber]
-        public int SequenceNumber { get; set; }
+        public uint SequenceNumber { get; set; }
     }
 }

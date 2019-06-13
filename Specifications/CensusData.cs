@@ -11,7 +11,7 @@ namespace Roentgenium.Specifications
     {
         [SequenceNumber]
         [FormatFieldOutputSpec(typeof(CsvSink), "seq id")]
-        public long UniqueIdentifier { get; set; }
+        public ulong UniqueIdentifier { get; set; }
 
         [FormatFieldOutputSpec(typeof(CsvSink), "track id")]
         public Guid TrackingId { get; set; }

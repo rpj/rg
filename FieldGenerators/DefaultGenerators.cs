@@ -16,6 +16,18 @@ namespace Roentgenium.FieldGenerators
         }
     }
 
+    [DefaultGeneratorForType(typeof(uint))]
+    [DefaultGeneratorForType(typeof(uint?))]
+    [DefaultGeneratorForType(typeof(ulong))]
+    [DefaultGeneratorForType(typeof(ulong?))]
+    public class UnsignedIntegerFieldGenerator : IFieldGenerator
+    {
+        public virtual object GenerateField(ref FieldGeneratorOptions opts)
+        {
+            return GeneratorsStatic.Random.Next(0, (int)opts.MaxValue);
+        }
+    }
+
     [DefaultGeneratorForType(typeof(float))]
     [DefaultGeneratorForType(typeof(float?))]
     [DefaultGeneratorForType(typeof(double))]
