@@ -15,10 +15,11 @@ steps:
     SourceFolder: '$(Build.Repository.LocalPath)/bin/Release/netcoreapp2.2'
     Contents: '**'
     TargetFolder: '$(System.DefaultWorkingDirectory)/Roentgenium.Release'
+
 - task: AzureFileCopy@3
   inputs:
     SourcePath: '$(System.DefaultWorkingDirectory)/Roentgenium.Release'
-    azureSubscription: 'Pay-As-You-Go (e382f751-6823-4da1-9064-c6f60e4066d6)'
+    azureSubscription: 'Pay-As-You-Go(e382f751-6823-4da1-9064-c6f60e4066d6)'
     Destination: 'AzureBlob'
     storage: 'roentgenium'
     ContainerName: 'rg-build-artifacts'
