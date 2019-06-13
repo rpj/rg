@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "Roentgenium": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_HOSTINGSTARTUP__KEYVAULT__CONFIGURATIONENABLED": "true",
+        "ASPNETCORE_ENVIRONMENT": "Debug",
+        "ASPNETCORE_HOSTINGSTARTUP__KEYVAULT__CONFIGURATIONVAULT": "https://roentgenium.vault.azure.net/"
+      },
+      "applicationUrl": "https://localhost:4242;http://localhost:4241"
+    },
+    "Public": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_HOSTINGSTARTUP__KEYVAULT__CONFIGURATIONENABLED": "true",
+        "ASPNETCORE_ENVIRONMENT": "Release",
+        "ASPNETCORE_HOSTINGSTARTUP__KEYVAULT__CONFIGURATIONVAULT": "https://roentgenium.vault.azure.net/"
+      },
+      "applicationUrl": "https://0.0.0.0:6789;http://0.0.0.0:6788"
+    },
+    "PublicRG": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_HOSTINGSTARTUP__KEYVAULT__CONFIGURATIONENABLED": "true",
+        "ASPNETCORE_ENVIRONMENT": "Release",
+        "ASPNETCORE_HOSTINGSTARTUP__KEYVAULT__CONFIGURATIONVAULT": "https://roentgenium.vault.azure.net/"
+      },
+      "applicationUrl": "https://0.0.0.0:6789;http://0.0.0.0:6788"
+    }
+  }
+}
