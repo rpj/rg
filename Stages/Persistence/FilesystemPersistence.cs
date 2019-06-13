@@ -21,8 +21,12 @@ namespace Roentgenium.Stages.Persistence
             if (_genConfig.PersistenceConfig.ContainsKey(typeof(FilesystemConfig)))
             {
                 _config = (FilesystemConfig)_genConfig.PersistenceConfig[typeof(FilesystemConfig)];
-                Status = PersistenceStatus.Configured;
-                Console.WriteLine($"{this} enabled");
+
+                if (!string.IsNullOrEmpty(_config?.PersistDirectory))
+                {
+                    Status = PersistenceStatus.Configured;
+                    Console.WriteLine($"{this} enabled");
+                }
             }
         }
 

@@ -2,6 +2,8 @@
    "version": "0.2.0",
    "configurations": [
         {
+            "type": "coreclr",
+            "request": "launch",
             "name": "Development",
             "preLaunchTask": "build",
             "program": "${workspaceFolder}/bin/Debug/netcoreapp2.2/Roentgenium.dll",
@@ -19,6 +21,8 @@
             }
         },
         {
+            "type": "coreclr",
+            "request": "launch",
             "name": "Production",
             "preLaunchTask": "build",
             "program": "${workspaceFolder}/bin/Debug/netcoreapp2.2/Roentgenium.dll",
@@ -36,6 +40,8 @@
             }
         },
         {
+            "type": "coreclr",
+            "request": "launch",
             "name": "Production.WithAzure",
             "preLaunchTask": "build",
             "program": "${workspaceFolder}/bin/Debug/netcoreapp2.2/Roentgenium.dll",
