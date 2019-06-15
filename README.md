@@ -10,6 +10,8 @@ Implemented as a [.NET Core](https://docs.microsoft.com/en-us/dotnet/core/) [RES
 
 ## Building
 
+`dotnet build` in the project directory (the same as in which `Roentgenium.csproj` lives)
+
 ### Prerequisities
 
 * [.NET Core 2.2](https://dotnet.microsoft.com/download/dotnet-core/2.2) or later
@@ -22,13 +24,9 @@ Implemented as a [.NET Core](https://docs.microsoft.com/en-us/dotnet/core/) [RES
 * A Redis instance:
     * To use the [`stream` output format](#stream-output-format)
 
-### To build
-
-* `dotnet build` in the project directory (the same as in which `Roentgenium.csproj` lives)
-
 ## Running
 
-* `dotnet run` in the project directory
+`dotnet run` in the project directory
     * the `ASPNETCORE_ENVIRONMENT` environment variable *directly* controls (via simple substituion) which `appsettings.*.json` file is used *via the interpolation `appsettings.{ASPNETCORE_ENVIRONMENT}.json`).
 
 In the simplest, default mode, generated data sets will be persisted *only* via the [Filesystem](https://github.com/rpj/rg/blob/master/Stages/Persistence/FilesystemPersistence.cs) persistence module with the artifacts written into the working directory.
@@ -39,13 +37,13 @@ The build artifacts (`Roentgenium.dll` and its brethen in `bin/{CONFIG}/netcorea
 
 * `dotnet bin/Release/netcoreapp2.2/Roentgenium.dll`
 
-The will always look in the working directory for the appropriate `appsettings` file, so if run directly from the `bin/Release/netcoreapp2.2/` without any settings files, the default configuration (as noted above) will be used.
+`Rg` will always look in the working directory for the appropriate `appsettings` file, so if run directly from the `bin/Release/netcoreapp2.2/` without any settings files, the default configuration (as noted above) will be used.
 
 ## Using
 
 For interface documentation, `Rg` includes [Swagger](https://swagger.io/) self-description support, always accessible on any running instance via the [`/swagger`](http://rg.rpjios.com/swagger) path.
 
-* [Postman](https://www.getpostman.com/) is the recommend way to interact easily with the interface
+[Postman](https://www.getpostman.com/) is the recommend way to interact easily with the interface.
 
 ### `stream` output format
 
