@@ -27,7 +27,7 @@ Implemented as a [.NET Core](https://docs.microsoft.com/en-us/dotnet/core/) [RES
 ## Running
 
 `dotnet run` in the project directory
-    * the `ASPNETCORE_ENVIRONMENT` environment variable *directly* controls (via simple substituion) which `appsettings.*.json` file is used *via the interpolation `appsettings.{ASPNETCORE_ENVIRONMENT}.json`).
+* the `ASPNETCORE_ENVIRONMENT` environment variable *directly* controls (via simple substituion) which `appsettings.*.json` file is used *via the interpolation `appsettings.{ASPNETCORE_ENVIRONMENT}.json`).
 
 In the simplest, default mode, generated data sets will be persisted *only* via the [Filesystem](https://github.com/rpj/rg/blob/master/Stages/Persistence/FilesystemPersistence.cs) persistence module with the artifacts written into the working directory.
 
