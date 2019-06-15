@@ -4,7 +4,7 @@
 
 A need arose for large, random-but-real-looking data sets and like any proper software developer I immediately took things too far. I also identified - and took advantage of - an opprotunity to learn a lot more about C#'s impressive reflective capabilites.
 
-As for the name, I'm naturally terrible at naming things so I started simply with just "Random Generator". That shortened into "Rg" which, thanks to high school chemistry, I'd recalled was a chemical symbol. And that was that.
+As for the name, I'm naturally terrible at naming things so I started simply with just "Random Generator". That shortened into "Rg" which, thanks to high school chemistry, I'd recalled was a chemical symbol. *Then* I [learned](https://en.wikipedia.org/wiki/Roentgenium) it is extremely radioactive, which of course is one of the best naturally-occuring sources of [true randomness](https://www.fourmilab.ch/hotbits/). So the name stuck.
 
 Implemented as a [.NET Core](https://docs.microsoft.com/en-us/dotnet/core/) [REST API](https://docs.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-2.2#web-apis), `Rg` can be built & run on any major modern OS.
 
