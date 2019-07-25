@@ -1,5 +1,6 @@
 ﻿using System;
 using Roentgenium.Interfaces;
+using RandomNameGeneratorLibrary;
 
 namespace Roentgenium
 {
@@ -46,6 +47,26 @@ namespace Roentgenium
         public override object LinkField(object linkedBool, ref FieldGeneratorOptions opts)
         {
             return new decimal((int)base.LinkField(linkedBool, ref opts));
+        }
+    }
+
+    public class GmailStylePlusAddressedEmailLinker : IFieldLinker
+    {
+        public object LinkField(object linkedFieldValue, ref FieldGeneratorOptions opts)
+        {
+            if (opts.FormatString == null)
+            {
+                throw new ArgumentException("GmailStylePlusAddressedEmailUsingNameLinker: Must specify base email address as format string");
+            }
+
+            var atIndex = opts.FormatString.IndexOf('@');
+
+            if (atIndex == -1)
+            {
+                throw new ArgumentException($"GmailStylePlusAddressedEmailUsingNameLinker: Format string ('{opts.FormatString}') is not an email address");
+            }
+
+            return opts.FormatString.Insert(atIndex, $"+{linkedFieldValue.ToString().Replace("+", "")}");
         }
     }
 }
