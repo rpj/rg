@@ -12,7 +12,18 @@ namespace Roentgenium.FieldGenerators
     {
         public virtual object GenerateField(ref FieldGeneratorOptions opts)
         {
-            return GeneratorsStatic.Random.Next((int)opts.MinValue, (int)opts.MaxValue);
+            var genVal = GeneratorsStatic.Random.Next((int)opts.MinValue, (int)opts.MaxValue);
+
+            if (opts.LengthLimit > 0)
+            {
+                var limVal = Math.Pow(10, opts.LengthLimit);
+                while (genVal >= limVal)
+                {
+                    genVal /= 10;
+                }
+            }
+
+            return genVal;
         }
     }
 
